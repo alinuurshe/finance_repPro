@@ -1,0 +1,26 @@
+// Suggested measures for the finance_data_10000_rows table.
+// Confirm exact field names in the PBIX model before adding these.
+
+Total Spend =
+SUM ( 'finance_data_10000_rows'[Amount] )
+
+Transaction Count =
+COUNTROWS ( 'finance_data_10000_rows' )
+
+Average Transaction =
+DIVIDE ( [Total Spend], [Transaction Count] )
+
+Approved Spend =
+CALCULATE (
+    [Total Spend],
+    NOT ISBLANK ( 'finance_data_10000_rows'[Approved By] )
+)
+
+Spend YTD =
+TOTALYTD (
+    [Total Spend],
+    'Calendar'[Date]
+)
+
+// Add after creating a Calendar table and relating Calendar[Date]
+// to the transaction date column.
