@@ -1,5 +1,19 @@
+// Optional calculated date table.
+// Create it first, relate Calendar[Date] to the transaction date, and mark it as the date table.
+Calendar =
+ADDCOLUMNS (
+    CALENDAR (
+        MIN ( 'finance_data_10000_rows'[Date] ),
+        MAX ( 'finance_data_10000_rows'[Date] )
+    ),
+    "Year", YEAR ( [Date] ),
+    "Month Number", MONTH ( [Date] ),
+    "Month", FORMAT ( [Date], "MMMM" ),
+    "Year Month", FORMAT ( [Date], "YYYY-MM" )
+)
+
 // Suggested measures for the finance_data_10000_rows table.
-// Confirm exact field names in the PBIX model before adding these.
+// Confirm exact field names and approval logic in the PBIX model before adding these.
 
 Total Spend =
 SUM ( 'finance_data_10000_rows'[Amount] )
@@ -22,5 +36,4 @@ TOTALYTD (
     'Calendar'[Date]
 )
 
-// Add after creating a Calendar table and relating Calendar[Date]
-// to the transaction date column.
+// In the Calendar table, sort Calendar[Month] by Calendar[Month Number].
