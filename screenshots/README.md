@@ -1,0 +1,1 @@
+Preview images for the Power BI finance dashboard.
