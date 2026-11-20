@@ -2,6 +2,12 @@
 
 An interactive Power BI report for reviewing project expenditure across time, departments, expense categories, projects, and approval levels.
 
+## Dashboard preview
+
+![Finance dashboard overview](./screenshots/finance-dashboard-overview.jpg)
+
+[Full Power BI Desktop screenshot](./screenshots/finance-dashboard-desktop.jpg)
+
 ## Dashboard overview
 
 The report contains one page and uses a table named `finance_data_10000_rows`. The current view shows:
