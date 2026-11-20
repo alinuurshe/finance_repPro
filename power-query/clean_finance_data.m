@@ -1,8 +1,8 @@
 // Power Query M starter for an Excel table named FinanceData.
- // Adjust the workbook path, table name, and source field names to match your file.
+// Adjust the workbook path, table name, and source field names to match your file.
 let
     Source = Excel.Workbook(
-        File.Contents("C:\\Data\\finance_transactions.xlsx"),
+        File.Contents("C:\Data\finance_transactions.xlsx"),
         null,
         true
     ),
